@@ -1,22 +1,37 @@
 package com.klasa3Pgr2;
 
-public class Main {
+import java.util.*;
+
+public class Main2 {
     public static void main(String[] args) {
-        //losowanie 6 liczb zapisze je w tablicy potem w kolekcji
-        //wpisywanie 6 liczb
-        //sprawdzanie ile trafionych
         System.out.println("Witaj na losowaniu 6 liczb");
         //tablica wylosowane
-        int wylosowane[] = new int[6];
-        //wartosci w tablicy typu prostego lub zlozonego
-        //nie ma mozliwosci zminy jej rozmiaru po jej deklaracji
-        for (int i = 0; i < wylosowane.length; i++) {
-            wylosowane[i] = (int) (Math.random() * 10 + 1);
+        //kolekcja
+        //mogą mieć tylko typy złożone
+        //mozna dodawac i usuwac elementy
+        Set<Integer> wylosowane = new HashSet<>();
+        //zbiór zazwyczaj zawiera elementy bez powtórzeń
+        //zbiór zazwyczaj nie ma indeksowania elementów
+        while (wylosowane.size()<6){
+            wylosowane.add((int) (Math.random() * 10 + 1));
         }
-        for (int i = 0; i < wylosowane.length; i++) {
-            System.out.print(wylosowane[i] + " ");
+        for(int element:wylosowane){
+            System.out.print(element+" ");
         }
-        //tablica=tablica łączy je i gdy zmieniamy cos w jednej zmieniamy to samo w drugiej
-        //talica2=tablica1.clone() kopiuję wartość ale nie łączy
+        System.out.println("\nInaczej wypisane: ");
+        System.out.print(wylosowane);
+
+        //wpisywanie 6 liczb z klawiatury
+        //dodajemy elementy na koncu tablicy
+        //na razie dowolne potem bez powtorzen
+        Scanner klawiatura = new Scanner(System.in);
+        List<Integer> wpisane = new ArrayList<>();
+        //lista to kolekcja w ktorej mozna zmieniac rozmiar w trakcie dzialania programu
+        //elementy indeksowe moga sie powtarzac
+        System.out.println("\nPodaj 6 liczb");
+        for(int i=0;i<6;i++){
+            wpisane.add(klawiatura.nextInt());
+        }
+        System.out.println(wpisane);
     }
 }

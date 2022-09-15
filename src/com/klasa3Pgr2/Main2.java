@@ -38,5 +38,14 @@ public class Main2 {
             wpisane.add(liczba);
         }
         System.out.println(wpisane);
+        //sprawdzamy ktore wartosci wpisane zostaly wylosowane
+        List<Integer> trafione = new LinkedList<>();
+        //jezeli wartosc wpisana zostala wylosowana to dodajemy ja do trafione
+        for(Integer wpisanaWartosc:wpisane){
+            if(wylosowane.contains(wpisanaWartosc)){
+                trafione.add(wpisanaWartosc);
+            }
+        }
+        System.out.println(trafione);
     }
 }

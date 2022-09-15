@@ -1,4 +1,4 @@
-package com.klasa3Pgr2;
+package com.klasa3Pgr2.gra;
 
 public class Main {
     public static void main(String[] args) {

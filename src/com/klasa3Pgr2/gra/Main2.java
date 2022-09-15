@@ -1,4 +1,4 @@
-package com.klasa3Pgr2;
+package com.klasa3Pgr2.gra;
 
 import javax.swing.*;
 import java.util.*;

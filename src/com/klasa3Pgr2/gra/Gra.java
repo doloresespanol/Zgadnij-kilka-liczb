@@ -11,17 +11,18 @@ public class Gra {
     protected - w klasie i klasach potomnych oraz w pakiecie
     używanie private hermetyzacja
      */
-    private Set<Integer> wylosowaneLiczby = new HashSet<>();
+    private static Set<Integer> wylosowaneLiczby = new HashSet<>();
     private List<Integer> wpisaneLiczby = new ArrayList<>();
-    List<Integer> trafioneLiczby = new LinkedList<>();
-    public void wylosowanieLiczb(int n){
+    private List<Integer> trafioneLiczby = new LinkedList<>();
+    private void wylosowanieLiczb(int n){
         while (wylosowaneLiczby.size()<n){
             wylosowaneLiczby.add((int) (Math.random() * 100 + 1));
         }
     }
-    public void wpisanieLiczb(int n){
+    private void wpisanieLiczb(int n){
         Scanner klawiatura = new Scanner(System.in);
         System.out.println("\nPodaj n liczb");
+        wpisaneLiczby.clear();
         while(wpisaneLiczby.size()<n){
             int liczba = klawiatura.nextInt();
             while(wpisaneLiczby.contains(liczba)){
@@ -32,10 +33,20 @@ public class Gra {
         }
     }
     public void podsumowanie (){
-        for(Integer wpisanaWartosc:wpisaneLiczby){
-            if(wpisaneLiczby.contains(wpisanaWartosc)){
-                trafioneLiczby.add(wpisanaWartosc);
+        for(Integer wpisana:wpisaneLiczby){
+            if(wylosowaneLiczby.contains(wpisana)){
+                trafioneLiczby.add(wpisana);
             }
         }
     }
+    public void zagraj (int liczbaWpisanych){
+        wylosowanieLiczb(6);
+        wpisanieLiczb(liczbaWpisanych);
+        podsumowanie();
+        System.out.println("Wylosowane liczby: "+wylosowaneLiczby);
+        System.out.println("Wpisane liczby: "+wpisaneLiczby);
+        System.out.println("Trafione liczby: "+trafioneLiczby);
+
+    }
+
 }

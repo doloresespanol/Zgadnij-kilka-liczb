@@ -29,8 +29,13 @@ public class Main2 {
         //lista to kolekcja w ktorej mozna zmieniac rozmiar w trakcie dzialania programu
         //elementy indeksowe moga sie powtarzac
         System.out.println("\nPodaj 6 liczb");
-        for(int i=0;i<6;i++){
-            wpisane.add(klawiatura.nextInt());
+        while(wpisane.size()<6){
+            int liczba = klawiatura.nextInt();
+            while(wpisane.contains(liczba)){
+                System.out.println("Już taka liczbę wpisano");
+                liczba=klawiatura.nextInt();
+            }
+            wpisane.add(liczba);
         }
         System.out.println(wpisane);
     }

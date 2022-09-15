@@ -13,7 +13,7 @@ public class Gra {
      */
     private Set<Integer> wylosowaneLiczby = new HashSet<>();
     private List<Integer> wpisaneLiczby = new ArrayList<>();
-    private List<Integer> trafioneLiczby = new LinkedList<>();
+    List<Integer> trafioneLiczby = new LinkedList<>();
     public void wylosowanieLiczb(int n){
         while (wylosowaneLiczby.size()<n){
             wylosowaneLiczby.add((int) (Math.random() * 100 + 1));
@@ -39,4 +39,3 @@ public class Gra {
         }
     }
 }
-
